@@ -10,6 +10,7 @@ class Tag
     @color = params['color']
     @description = params['description']
     @budget = params['budget'].to_f
+   
   end
 
   def save
