@@ -29,5 +29,10 @@ class TestTag < Minitest::Test
     assert_equal(Float, @tag.budget.class)
   end
 
+  def test_save
+    @tag.save
+    assert_equal(Fixnum, @tag.id.class)
+  end
+
 
 end
