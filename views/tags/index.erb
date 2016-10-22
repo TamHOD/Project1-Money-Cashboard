@@ -1,3 +1,7 @@
 <% @tags.each do |tag| %>
-  Name: <%= tag.name %><br><br>
+  <div style="background-color: <%= tag.color %>; width: 20%">
+    <p><%= tag.name %></p>
+    <p><%= tag.description %></p>
+    <p>£ <%= tag.budget %></p>
+  </div>
 <% end %>

@@ -1,0 +1,32 @@
+* {
+  font-family: system, -apple-system, BlinkMacSystemFont,
+        "Helvetica Neue", "Lucida Grande";
+}
+
+body {
+    font-weight: lighter;
+    background-color: rgb(223, 234, 244);
+
+}
+
+nav li {
+  display: inline-block;
+  margin: 15px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 110%;
+  font-weight: 500;
+
+}
+
+nav {
+
+  background-color: rgb(210, 225, 255); 
+
+}
+
+p{
+  padding: 5px;
+}
