@@ -27,7 +27,7 @@ class Tag
       )
       RETURNING *
       "
-    tag = Tag.map_item ( sql ) 
+    tag = Tag.map_item( sql ) 
     @id = tag.id.to_i
   end
 
