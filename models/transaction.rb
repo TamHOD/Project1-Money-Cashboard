@@ -3,7 +3,7 @@ require_relative './payee'
 
 class Transaction
 
-  attr_reader :id, :payee_id, :amount
+  attr_reader :id, :payee_id
 
   def initialize( params )
     @id = params['id'].to_i if params['id']
@@ -25,6 +25,10 @@ class Transaction
       "
     transaction = Transaction.map_item( sql ) 
     @id = transaction.id.to_i
+  end
+
+  def amount
+    return sprintf('%.2f', @amount)
   end
 
   def payee

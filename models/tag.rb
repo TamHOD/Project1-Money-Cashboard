@@ -2,7 +2,7 @@ require_relative '../db/sql_runner'
 
 class Tag
 
-  attr_reader :id, :name, :color, :description, :budget
+  attr_reader :id, :name, :color, :description
 
   def initialize( params )
     @id = params['id'].to_i if params['id']
@@ -30,6 +30,10 @@ class Tag
       "
     tag = Tag.map_item( sql ) 
     @id = tag.id.to_i
+  end
+
+  def budget
+    return sprintf('%.2f', @budget)
   end
 
   def self.find( id )
