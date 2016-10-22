@@ -37,14 +37,17 @@ class TestTag < Minitest::Test
   end
 
   def test_all_array
+    @tag.save
     assert_equal(Array, Tag.all.class)
   end
 
   def test_all_tag
-      assert_equal(Tag, Tag.all[0].class)
+    @tag.save
+    assert_equal(Tag, Tag.all[0].class)
   end   
 
   def test_find_tag
+    @tag.save
     @id = Tag.all.first.id
     assert_equal(Tag, Tag.find(@id).class)
   end

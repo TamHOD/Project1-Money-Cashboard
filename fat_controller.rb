@@ -4,3 +4,6 @@ require('pry-byebug')
 
 require_relative './models/tag'
 require_relative './controllers/tags_controller'
+
+require_relative './models/payee'
+require_relative './controllers/payees_controller'
