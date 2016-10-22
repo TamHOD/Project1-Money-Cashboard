@@ -31,6 +31,14 @@ class Tag
     @id = tag.id.to_i
   end
 
+  def self.find 
+
+  end
+
+  def self.all 
+    sql = "SELECT * from tags"
+    return Tag.map_items( sql )
+  end
 
   def self.map_items( sql )
     results_data = SqlRunner.run( sql )
