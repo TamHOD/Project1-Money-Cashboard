@@ -1,3 +1,4 @@
 <% @transactions.each do |transaction| %>
   <p><%= transaction.payee.name %> <%= transaction.amount %></p>
 <% end %>
+<h2>Total - £ <%= Transaction.total %></h2>
