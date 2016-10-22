@@ -20,7 +20,8 @@ end
 
 #show
 get '/tags/:id' do
-  "#{params}"
+  @tag = Tag.find( params[:id] )
+  erb(:'/tags/show')
 end
 
 #edit

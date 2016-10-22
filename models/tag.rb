@@ -31,8 +31,9 @@ class Tag
     @id = tag.id.to_i
   end
 
-  def self.find 
-
+  def self.find( id )
+    sql = "SELECT * FROM tags WHERE id = #{id}"
+    return map_item( sql )
   end
 
   def self.all 

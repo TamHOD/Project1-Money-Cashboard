@@ -6,11 +6,13 @@ require_relative '../models/tag'
 class TestTag < Minitest::Test
   
   def setup 
-    @tag = Tag.new('name' => 'food', 'color' => 'green', 'description' => 'Total food budget', 'budget' => 200)
+    #name is unique so have to generate randomly
+    @rand_name = "food_#{rand(9999999).to_s}"
+    @tag = Tag.new('name' => @rand_name, 'color' => 'green', 'description' => 'Total food budget', 'budget' => 200)
   end
 
   def test_name
-    assert_equal('food', @tag.name)
+    assert_equal(@rand_name, @tag.name)
   end
 
   def test_color
@@ -32,6 +34,19 @@ class TestTag < Minitest::Test
   def test_save
     @tag.save
     assert_equal(Fixnum, @tag.id.class)
+  end
+
+  def test_all_array
+    assert_equal(Array, Tag.all.class)
+  end
+
+  def test_all_tag
+      assert_equal(Tag, Tag.all[0].class)
+  end   
+
+  def test_find_tag
+    @id = Tag.all.first.id
+    assert_equal(Tag, Tag.find(@id).class)
   end
 
 
