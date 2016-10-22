@@ -1,4 +1,5 @@
 require_relative '../db/sql_runner'
+require_relative './payee'
 
 class Transaction
 
@@ -25,6 +26,16 @@ class Transaction
     transaction = Transaction.map_item( sql ) 
     @id = transaction.id.to_i
   end
+
+  def payee
+    sql = "SELECT p.* FROM payees p
+            INNER JOIN transactions t ON 
+              p.id = t.payee_id
+            WHERE 
+              p.id = #{@payee_id}"
+    return Payee.map_item( sql )
+  end
+
 
   def self.find( id )
     sql = "SELECT * FROM transactions WHERE id = #{id}"

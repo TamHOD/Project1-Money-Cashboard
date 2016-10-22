@@ -1,12 +1,16 @@
-<h1>add a payee</h1>
+<h1>add a transaction</h1>
 
 <form action="/transactions" method="post">
 
-  <label for="name">name</label>
-    <input type="text" name="name" id="name">
-
-  <label for="website">website</label>
-    <input type="text" name="website" id="website">
+  <label for="payee">payee</label>
+    <select name="payee_id" id="payee">
+      <% @payees.each do |payee| %>
+        <option value="<%= payee.id %>"><%= payee.name %></option>
+      <% end %>
+    </select>
+    
+  <label for="amount">amount</label>
+    <input type="number" name="amount" id="amount">
 
   <input type="submit" value="add">
 </form>

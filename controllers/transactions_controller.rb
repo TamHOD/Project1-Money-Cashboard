@@ -2,25 +2,27 @@
 
 #index
 get '/transactions' do
-  @transactions = Payee.all
+  @transactions = Transaction.all
   erb(:'/transactions/index')
 end
 
 #new
 get '/transactions/new' do 
+  @payees = Payee.all
   erb(:'/transactions/new')
 end
 
 #create
 post '/transactions' do
-  @transaction = Payee.new( params )
+  puts params
+  @transaction = Transaction.new( params )
   @transaction.save
   redirect to(:'/transactions')
 end
 
 #show
 get '/transactions/:id' do
-  @transaction = Payee.find( params[:id] )
+  @transaction = Transaction.find( params[:id] )
   erb(:'/transactions/show')
 end
 

@@ -7,3 +7,6 @@ require_relative './controllers/tags_controller'
 
 require_relative './models/payee'
 require_relative './controllers/payees_controller'
+
+require_relative './models/transaction'
+require_relative './controllers/transactions_controller'
