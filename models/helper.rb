@@ -11,5 +11,23 @@ class Helper
     end  
   end
 
+  def self.find_child( path )
+
+    case path
+    when "/tags"
+      return 1
+    when "/payees"
+      return 2
+    when "/transactions"
+      return 3
+    when "/tags/new"
+      return 4
+    when "/payees/new"
+      return 5
+    when "/transactions/new"
+      return 6
+    end
+    
+  end
 
 end

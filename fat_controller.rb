@@ -17,3 +17,8 @@ require_relative './models/tagging'
 require_relative './controllers/taggings_controller'
 
 require_relative './models/helper'
+
+before do
+  @path = request.path_info
+
+end

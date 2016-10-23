@@ -1,16 +1,19 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
   <title>Money Cashboard</title>
   <nav>
     <ul>
-      <li><a href="/tags">tags</a> </li>
-      <li><a href="/payees">payees</a> </li>
-      <li><a href="/transactions">transactions</a> </li>
-      <div><li><a href="/tags/new">new tag</a> </li></div>
-      <li><a href="/payees/new">new payee</a> </li>
-      <li><a href="/transactions/new">new transaction</a> </li>
+      <style type="text/css">
+        nav div:nth-of-type(<%= Helper.find_child( @path ) %>) {background-color: pink;}        
+      </style>
+      <div><li><a href="/tags">tags</a></li></div>
+      <div><li><a href="/payees">payees</a></li></div>
+      <div><li><a href="/transactions">transactions</a></li></div>
+      <div><li><a href="/tags/new">new tag</a></li></div>
+      <div><li><a href="/payees/new">new payee</a></li></div>
+      <div><li><a href="/transactions/new">new transaction</a></li></div>
     </ul>
   </nav>
 </head>
