@@ -25,6 +25,7 @@ class Transaction
       "
     transaction = Transaction.map_item( sql ) 
     @id = transaction.id.to_i
+    return transaction
   end
 
   def amount_2f_s

@@ -9,6 +9,7 @@ end
 #new
 get '/transactions/new' do 
   @payees = Payee.all
+  @tags = Tag.all
   erb(:'/transactions/new')
 end
 
@@ -16,7 +17,17 @@ end
 post '/transactions' do
   puts params
   @transaction = Transaction.new( params )
-  @transaction.save
+  @transaction_id = @transaction.save.id
+  
+  @tags_ids = []
+  params.each_pair do |key, value|
+    if value == "on" and key[0..6] == "tag_id_"
+      @tag_id = key.split("tag_id_")[1].to_i
+      @tagging = Tagging.new('tag_id' => @tag_id, 'transaction_id' => @transaction_id)
+      @tagging.save
+    end
+ 
+  end 
   redirect to(:'/transactions')
 end
 

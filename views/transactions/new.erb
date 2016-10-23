@@ -12,5 +12,15 @@
   <label for="amount">amount</label>
     <input type="number" name="amount" id="amount">
 
+  <br><br>
+  <h4>tags</h4>
+
+  <% @tags.each do |tag| %>
+
+  <label form="<%= tag.name %>"><%= tag.name %></label>
+    <input type="checkbox" name="tag_id_<%= tag.id %>" id="<%= tag.name %>">
+    <br>
+  <% end %>
+
   <input type="submit" value="add">
 </form>

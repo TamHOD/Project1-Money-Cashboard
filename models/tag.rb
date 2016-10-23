@@ -32,6 +32,22 @@ class Tag
     @id = tag.id.to_i
   end
 
+  def transactions
+    sql = "SELECT transactions.* FROM transactions
+            INNER JOIN taggings ON
+              transactions.id = taggings.transaction_id
+                INNER JOIN tags ON
+                  taggings.tag_id = tags.id 
+                    WHERE tags.id = #{@id}"
+    return Transaction.map_items( sql )
+  end
+
+  def spent
+    spent = 0
+    transactions.each {|transaction| spent += transaction.amount }
+    return sprintf('%.2f', spent)
+  end  
+
   def budget_2f_s
     return sprintf('%.2f', @budget)
   end

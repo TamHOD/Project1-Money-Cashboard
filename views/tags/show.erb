@@ -1,3 +1,9 @@
+<h2>tag details</h2>
 <p><%= @tag.name %></p>
 <p><%= @tag.description %></p>
-<p>£ <%= @tag.budget.2f_s %></p>
+<p>£ <%= @tag.budget_2f_s %></p>
+<h2>transactions with this tag</h2>
+<% @tag.transactions.each do |transaction| %>
+  <p><%= transaction.payee.name %> £ <%= transaction.amount_2f_s %></p>
+<% end %>
+<h2>Total spent = £ <%= @tag.spent %></h2>

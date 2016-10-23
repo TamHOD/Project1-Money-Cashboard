@@ -1,7 +1,10 @@
 <% @tags.each do |tag| %>
-  <div style="background-color: <%= tag.color %>; width: 20%">
-    <p><%= tag.name %></p>
-    <p><%= tag.description %></p>
-    <p>£ <%= tag.budget_2f_s %></p>
-  </div>
+  <a class ="tag_a" href="/tags/<%= tag.id %>">
+    <div class ="tag_div" style="background-color: <%= tag.color %>; width: 20%">
+      <p><%= tag.name %></p>
+      <p><%= tag.description %></p>
+      <p>budget - £ <%= tag.budget_2f_s %></p>
+      <p>spent - £ <%= tag.spent %></p>
+    </div>
+  </a>
 <% end %>
