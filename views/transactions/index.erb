@@ -1,3 +1,4 @@
+<h1>transactions</h1>
 <% @transactions.each do |transaction| %>
   <p><%= transaction.payee.name %><a href="/transactions/<%= transaction.id %>"> £ <%= transaction.amount_2f_s %></a></p>
 <% end %>
