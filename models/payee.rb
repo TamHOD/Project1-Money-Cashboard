@@ -1,4 +1,4 @@
-require_relative '../db/sql_runner'
+
 
 class Payee
 
@@ -7,7 +7,7 @@ class Payee
   def initialize( params )
     @id = params['id'].to_i if params['id']
     @name = params['name']
-    @website = params['website']
+    @website = Helper.fix_url( params['website'] )
   end
 
   def save

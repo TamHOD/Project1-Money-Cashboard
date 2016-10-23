@@ -15,19 +15,7 @@ end
 
 #create
 post '/transactions' do
-  puts params
-  @transaction = Transaction.new( params )
-  @transaction_id = @transaction.save.id
-  
-  @tags_ids = []
-  params.each_pair do |key, value|
-    if value == "on" and key[0..6] == "tag_id_"
-      @tag_id = key.split("tag_id_")[1].to_i
-      @tagging = Tagging.new('tag_id' => @tag_id, 'transaction_id' => @transaction_id)
-      @tagging.save
-    end
- 
-  end 
+  Tagging.extract_from_params ( params )
   redirect to(:'/transactions')
 end
 
