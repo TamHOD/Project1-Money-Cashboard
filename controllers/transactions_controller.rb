@@ -15,7 +15,10 @@ end
 
 #create
 post '/transactions' do
-  Tagging.extract_from_params ( params )
+  @transaction = Transaction.new( params )
+  @transaction.save
+  @transaction_id = @transaction.save.id
+  Tagging.extract_from_params( params, @transaction_id )
   redirect to(:'/transactions')
 end
 

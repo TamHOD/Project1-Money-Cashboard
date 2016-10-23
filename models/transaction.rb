@@ -28,6 +28,17 @@ class Transaction
     return transaction
   end
 
+  def tags
+    sql = "SELECT tags.* FROM tags
+            INNER JOIN taggings 
+              ON tags.id = taggings.tag_id
+                INNER JOIN transactions
+                  ON taggings.transaction_id = transactions.id
+                    WHERE transactions.id = #{@id}"
+    return Tag.map_items( sql )
+  end
+
+
   def amount_2f_s
     return sprintf('%.2f', @amount)
   end

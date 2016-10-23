@@ -1,1 +1,4 @@
 <%= @transaction.payee.name %> £<%= @transaction.amount_2f_s %>
+<% @transaction.tags.each do |tag| %>
+  <%= tag.name %>
+<% end %>

@@ -21,10 +21,7 @@ class Tagging
     SqlRunner.run(sql)
   end
 
-  def self.extract_from_params( params )
-
-    transaction = Transaction.new( params )
-    transaction_id = transaction.save.id
+  def self.extract_from_params( params, transaction_id )
     
     params.each_pair do |key, value|
       if value == "on" and key[0..6] == "tag_id_"
