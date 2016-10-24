@@ -19,7 +19,7 @@
   <% @tags.each do |tag| %>
 
   <label form="<%= tag.name %>"><%= tag.name %></label>
-    <input type="checkbox" name="tag_id_<%= tag.id %>" id="<%= tag.name %>">
+    <input type="checkbox" name="tag_id_<%= tag.id %>" id="<%= tag.name %>" <%= "checked" if @transaction.has_tag?( tag.id ) %>>
     <br>
   <% end %>
 

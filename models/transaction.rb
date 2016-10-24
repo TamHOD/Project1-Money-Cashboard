@@ -52,6 +52,21 @@ class Transaction
     return Payee.map_item( sql )
   end
 
+  # def self.update( params )
+  #   sql = "UPDATE transactions SET
+  #     amount = '#{params['name']}',
+  #     description = '#{params['description']}',
+  #   WHERE 
+  #     id = #{params['id']}"
+  #   SqlRunner.run( sql )
+  # end
+
+  def has_tag?( tag_id )
+    tags.each do |tag|
+      return true if tag_id == tag.id
+    end
+    return false
+  end 
 
   def self.find( id )
     sql = "SELECT * FROM transactions WHERE id = #{id}"

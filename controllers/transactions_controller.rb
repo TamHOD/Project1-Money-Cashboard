@@ -39,7 +39,8 @@ end
 
 #update
 put '/transactions/:id' do
-  "#{params}"
+  Transaction.update( params[:id])
+  redirect to("transactions/#{params[:id]}")
 end
 
 #delete
