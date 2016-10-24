@@ -28,7 +28,7 @@ class Payee
   def self.update( params )
     sql = "UPDATE payees SET
       name = '#{params['name']}',
-      website = '#{params['website']}',
+      website = '#{params['website']}'
     WHERE 
       id = #{params['id']}"
     SqlRunner.run( sql )

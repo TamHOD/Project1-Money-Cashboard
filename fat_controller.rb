@@ -22,3 +22,7 @@ before do
   @path = request.path_info
 
 end
+
+get '/' do
+  redirect to('/tags')
+end

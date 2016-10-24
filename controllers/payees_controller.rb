@@ -38,5 +38,6 @@ end
 
 #delete
 delete '/payees/:id' do
-  "#{params}"
+  Payee.delete( params[:id] )
+  redirect to(:'payees')
 end

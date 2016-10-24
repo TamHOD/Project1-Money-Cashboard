@@ -1,10 +1,17 @@
 <p><%= @payee.name %></p>
 
+<form action="/payees/<%= @payee.id %>" method="post">
+<input type="hidden" name="_method" value="delete">
+
+  <input class="delete_submit" type="submit" value="delete!">
+  
+</form>
 <form action="/payees/<%= @payee.id %>/edit" method="get">
 
   <input type="submit" value="edit">
   
 </form>
+
 
 
 <p><a href="<%= @payee.website %>"><%= @payee.website %></a></p>

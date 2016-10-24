@@ -21,7 +21,7 @@ end
 #show
 get '/tags/:id' do
   @tag = Tag.find( params[:id] )
-  erb(:'/tags/show')
+  erb(:'/tags/show') 
 end
 
 #edit
