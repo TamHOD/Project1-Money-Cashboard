@@ -26,17 +26,20 @@ end
 
 #edit
 get '/tags/:id/edit' do
-  "#{params}"
+  @tag = Tag.find( params[:id] )
+  erb(:'/tags/edit')
+
 end
 
 #update
 put '/tags/:id' do
-  "#{params}"
+  Tag.update( params )
+  redirect to( "/tags/#{params[:id]}" )
 end
 
 #delete
 delete '/tags/:id' do
-  "#{params}"
+  Tag.delete( params[:id ])
 end
 
 

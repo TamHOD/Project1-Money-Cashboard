@@ -27,7 +27,14 @@ class Helper
     when "/transactions/new"
       return 6
     end
-    
+
   end
+
+
+  def self.to_2dp( number )
+    return sprintf('%.2f', number)
+  end
+
+  
 
 end

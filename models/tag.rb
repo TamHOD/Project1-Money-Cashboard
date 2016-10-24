@@ -52,6 +52,18 @@ class Tag
     return sprintf('%.2f', @budget)
   end
 
+  def self.update( params )
+    sql = "UPDATE tags SET
+      name = '#{params['name']}',
+      description = '#{params['description']}',
+      color = '#{params['color']}',
+      budget = #{params['budget']}
+    WHERE 
+      id = #{params['id']}"
+    SqlRunner.run( sql )
+  end
+
+
   def self.find( id )
     sql = "SELECT * FROM tags WHERE id = #{id}"
     return map_item( sql )
@@ -74,6 +86,13 @@ class Tag
   def self.delete_all
     sql = "DELETE from tags"
     SqlRunner.run( sql )
+  end
+
+  def self.delete( id )
+    sql = "DELETE FROM tags
+            WHERE id = #{id}"
+    SqlRunner.run( sql )
+
   end
 
 
