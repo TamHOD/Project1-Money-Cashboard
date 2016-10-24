@@ -1,2 +1,10 @@
 <p><%= @payee.name %></p>
+
+<form action="/payees/<%= @payee.id %>/edit" method="get">
+
+  <input type="submit" value="edit">
+  
+</form>
+
+
 <p><a href="<%= @payee.website %>"><%= @payee.website %></a></p>

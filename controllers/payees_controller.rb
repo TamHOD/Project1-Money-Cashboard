@@ -26,12 +26,14 @@ end
 
 #edit
 get '/payees/:id/edit' do
-  "#{params}"
+  @payee = Payee.find( params[:id ])
+  erb(:'/payees/edit')
 end
 
 #update
 put '/payees/:id' do
-  "#{params}"
+  Payee.update( params[:id] )
+  redirect to(:'/payees')
 end
 
 #delete

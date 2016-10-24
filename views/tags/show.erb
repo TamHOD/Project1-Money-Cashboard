@@ -1,11 +1,19 @@
 <h2>tag details</h2>
+<h4><%= @tag.name %></h4>
 <form action="/tags/<%= @tag.id %>" method="post">
 <input type="hidden" name="_method" value="delete">
 
   <input class="delete_submit" type="submit" value="delete!">
   
 </form>
-<p><%= @tag.name %></p>
+<form action="/tags/<%= @tag.id %>/edit" method="get">
+
+
+  <input type="submit" value="edit">
+  
+</form>
+
+
 
 <p><%= @tag.description %></p>
 <p>£ <%= @tag.budget_2f_s %></p>

@@ -25,6 +25,15 @@ class Payee
     @id = payee.id.to_i
   end
 
+  def self.update( params )
+    sql = "UPDATE payees SET
+      name = '#{params['name']}',
+      website = '#{params['website']}',
+    WHERE 
+      id = #{params['id']}"
+    SqlRunner.run( sql )
+  end
+
   def self.find( id )
     sql = "SELECT * FROM payees WHERE id = #{id}"
     return map_item( sql )
@@ -49,6 +58,10 @@ class Payee
     SqlRunner.run( sql )
   end
 
-
+  def self.delete( id )
+    sql = "DELETE FROM payees
+            WHERE id = #{id}"
+    SqlRunner.run( sql )
+  end
 
 end

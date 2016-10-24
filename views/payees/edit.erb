@@ -1,0 +1,13 @@
+<h1>edit payee</h1>
+
+<form action="/payees/<%= @payee.id %>" method="post">
+<input type="hidden" name="_method" value="put">
+
+  <label for="name">name</label>
+    <input type="text" name="name" id="name" value="<%= @payee.name %>">
+
+  <label for="website">website</label>
+    <input type="text" name="website" id="website" value="<%= @payee.website %>">
+
+  <input type="submit" value="update">
+</form>
