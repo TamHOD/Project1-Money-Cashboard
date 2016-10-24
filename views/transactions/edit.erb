@@ -1,0 +1,27 @@
+<h1>edit transaction</h1>
+
+<form action="/transactions/<%= @transaction.id %>" method="post">
+<input type="hidden" name="_method" value="put">
+
+  <label for="payee">payee</label>
+    <select name="payee_id" id="payee">
+      <% @payees.each do |payee| %>
+        <option value="<%= payee.id %>" <%="selected" if @transaction.payee.id == payee.id %>><%= payee.name %></option>
+      <% end %>
+    </select>
+    
+  <label for="amount">amount</label>
+    <input type="number" name="amount" id="amount" value="<%= @transaction.amount %>">
+
+  <br><br>
+  <h4>tags</h4>
+
+  <% @tags.each do |tag| %>
+
+  <label form="<%= tag.name %>"><%= tag.name %></label>
+    <input type="checkbox" name="tag_id_<%= tag.id %>" id="<%= tag.name %>">
+    <br>
+  <% end %>
+
+  <input type="submit" value="add">
+</form>

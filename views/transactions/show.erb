@@ -2,3 +2,9 @@
 <% @transaction.tags.each do |tag| %>
   <%= tag.name %>
 <% end %>
+
+<form action="/transactions/<%= @transaction.id %>/edit" method="get">
+
+  <input type="submit" value="edit">
+  
+</form>

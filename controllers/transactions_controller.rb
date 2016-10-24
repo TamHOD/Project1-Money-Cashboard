@@ -17,7 +17,7 @@ end
 post '/transactions' do
   @transaction = Transaction.new( params )
   @transaction.save
-  @transaction_id = @transaction.save.id
+  @transaction_id = @transaction.id
   Tagging.extract_from_params( params, @transaction_id )
   redirect to(:'/transactions')
 end
@@ -30,7 +30,11 @@ end
 
 #edit
 get '/transactions/:id/edit' do
-  "#{params}"
+  @transaction = Transaction.find( params[:id] )
+  @payees = Payee.all
+  @tags = Tag.all
+  erb(:'/transactions/edit')
+
 end
 
 #update
