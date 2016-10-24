@@ -84,7 +84,7 @@ class Tag
   end
 
   def self.delete_all
-    sql = "DELETE from tags"
+    sql = "DELETE FROM tags"
     SqlRunner.run( sql )
   end
 

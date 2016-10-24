@@ -1,5 +1,12 @@
 <h2>tag details</h2>
+<form action="/tags/<%= @tag.id %>" method="post">
+<input type="hidden" name="_method" value="delete">
+
+  <input class="delete_submit" type="submit" value="delete!">
+  
+</form>
 <p><%= @tag.name %></p>
+
 <p><%= @tag.description %></p>
 <p>£ <%= @tag.budget_2f_s %></p>
 <h2>transactions with this tag</h2>
@@ -8,4 +15,3 @@
 <% end %>
 <h2>Total spent = £ <%= @tag.spent %></h2>
 
-<form></form>

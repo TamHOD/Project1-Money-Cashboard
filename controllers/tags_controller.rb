@@ -40,6 +40,8 @@ end
 #delete
 delete '/tags/:id' do
   Tag.delete( params[:id ])
+  redirect to( "/tags" )
+
 end
 
 
