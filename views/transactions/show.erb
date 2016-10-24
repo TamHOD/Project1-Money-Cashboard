@@ -1,4 +1,13 @@
 <%= @transaction.payee.name %> £<%= @transaction.amount_2f_s %>
+
+
+<form action="/transactions/<%= @transaction.id %>" method="post">
+<input type="hidden" name="_method" value="delete">
+
+  <input class="delete_submit" type="submit" value="delete!">
+  
+</form>
+
 <% @transaction.tags.each do |tag| %>
   <%= tag.name %>
 <% end %>

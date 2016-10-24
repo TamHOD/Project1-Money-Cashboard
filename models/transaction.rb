@@ -52,14 +52,14 @@ class Transaction
     return Payee.map_item( sql )
   end
 
-  # def self.update( params )
-  #   sql = "UPDATE transactions SET
-  #     amount = '#{params['name']}',
-  #     description = '#{params['description']}',
-  #   WHERE 
-  #     id = #{params['id']}"
-  #   SqlRunner.run( sql )
-  # end
+  def self.update( params )
+    sql = "UPDATE transactions SET
+      amount = #{params['amount']},
+      payee_id = #{params['payee_id']}
+    WHERE 
+      id = #{params['id']}"
+    SqlRunner.run( sql )
+  end
 
   def has_tag?( tag_id )
     tags.each do |tag|
@@ -95,6 +95,12 @@ class Transaction
   def self.total
     sql = "SELECT sum(amount) FROM transactions"
     return SqlRunner.run( sql ).first['sum']
+  end
+
+  def self.delete( id )
+    sql = "DELETE from transactions WHERE id = #{id}"
+    SqlRunner.run( sql )
+
   end
 
 end
