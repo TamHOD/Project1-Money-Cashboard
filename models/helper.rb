@@ -30,7 +30,6 @@ class Helper
 
   end
 
-
   def self.to_2dp( number )
     return sprintf('%.2f', number)
   end
@@ -48,7 +47,20 @@ class Helper
     return Helper.to_2dp( total )
   end
 
+  def self.get_bar_css( part, total )
 
+    percentage = (part.to_f) / (total.to_f)
+    bar_height =  200 * percentage + 5
+    bar_height = 200 if bar_height > 200
+    css_add = ""
+    css = "height: #{bar_height}px;"
+    css_add = "background-color: orange;" if percentage >= 0.66
+    css_add = "background-color: red;" if percentage >= 0.80
+
+    return css + css_add
+    
+
+  end
 
   
 

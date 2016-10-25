@@ -17,6 +17,7 @@ end
 post '/transactions' do
   @transaction = Transaction.new( params )
   @saved_transaction = @transaction.save
+
   Tagging.extract_from_params( params, @saved_transaction.id )
   redirect to(:'/transactions')
 end
@@ -38,7 +39,6 @@ end
 
 #update
 put '/transactions/:id' do
-
   Transaction.update( params )
   Tagging.extract_from_params( params, params[:id].to_i )
   redirect to("/transactions/#{params[:id]}")

@@ -1,11 +1,15 @@
 <h1>tags</h1>
 <% @tags.each do |tag| %>
   <a class ="tag_a" href="/tags/<%= tag.id %>">
-    <div class ="tag_div" style="background-color: <%= tag.color %>; width: 20%">
-      <p><%= tag.name %></p>
-      <p><%= tag.description %></p>
-      <p>budget - £ <%= Helper.to_2dp( tag.budget ) %></p>
-      <p>spent - £ <%= tag.spent %></p>
+    <div class ="tag_div" style="background-color: <%= tag.color %>;">
+    
+      <div class="p_div">
+        <p><%= tag.name %></p>
+        <p><%= tag.description %></p>
+        <p>budget - £ <%= Helper.to_2dp( tag.budget ) %></p>
+        <p>spent - £ <%= tag.spent %></p>
+      </div>
+      <div class="bar_div" style="<%= Helper.get_bar_css( tag.spent, tag.budget ) %>"> </div>
     </div>
   </a>
 <% end %>

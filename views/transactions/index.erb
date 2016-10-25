@@ -3,4 +3,3 @@
   <p><%= transaction.payee.name %><a href="/transactions/<%= transaction.id %>"> £ <%= Helper.to_2dp( transaction.amount ) %></a></p>
 <% end %>
 <h2>Total - £ <%= Transaction.total %></h2>
-<h2>Total budget - £ <%= Tag.total_budget %></h2>

@@ -9,6 +9,11 @@ body {
 
 }
 
+p {
+  z-index: 1;
+  position: relative;
+}
+
 nav li {
   display: inline-block;
   margin: 15px;
@@ -26,8 +31,35 @@ a {
 }
 
 .tag_div {
-  width: 50px;
+  /*width: 300px;*/
+  width: 25%;
   display: inline-block;
+  height: 200px;
+  /*z-index: -1;*/
+  position: relative;
+  margin: 5px;
+
+}
+
+.p_div {
+  display: inline-block;
+  width:75%;
+}
+
+.bar_div {
+  float: right;
+  width: 24%;
+  height: 180px;
+  display: inline-block;
+  background-color: lightgreen;
+  z-index: 0;
+  animation-name: grow;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
 }
 
 .tag_div:hover {
@@ -69,4 +101,8 @@ ul div {
 .delete_submit {
   background-color: red;
 }
+
+@keyframes grow {0% {height: 0px;}
+
+
 
