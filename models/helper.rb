@@ -50,7 +50,7 @@ class Helper
   def self.get_bar_css( part, total )
 
     percentage = (part.to_f) / (total.to_f)
-    bar_height =  200 * percentage + 5
+    bar_height =  200 * percentage
     bar_height = 200 if bar_height > 200
     css_add = ""
     css = "height: #{bar_height}px;"
