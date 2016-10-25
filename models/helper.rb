@@ -20,7 +20,7 @@ class Helper
       return 2
     when "/transactions"
       return 3
-    when "/budets"
+    when "/budgets"
       return 4  
     when "/tags/new"
       return 5
@@ -29,6 +29,7 @@ class Helper
     when "/transactions/new"
       return 7
     when "/budgets/new"
+      return 8
     end
 
   end

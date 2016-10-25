@@ -26,9 +26,9 @@ CREATE TABLE budgets(
 
 CREATE TABLE transactions(
   id SERIAL4 PRIMARY KEY,
-  payee_id INT4 REFERENCES payees(id) ON DELETE CASCADE,
+  payee_id INT4 REFERENCES payees(id),
   amount NUMERIC(10,2),
-  budget_id INT4 REFERENCES budgets(id)
+  budget_id INT4 REFERENCES budgets(id) ON DELETE SET NULL
 );
 
 CREATE TABLE taggings(

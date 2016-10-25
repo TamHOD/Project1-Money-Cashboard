@@ -1,1 +1,15 @@
-INDEX!
+<h1>budgets</h1>
+<% @budgets.each do |budget| %>
+  <a class ="tag_a" href="/budgets/<%= budget.id %>">
+    <div class ="tag_div" style="background-color: pink;">
+    
+      <div class="p_div">
+        <p><%= budget.name %></p>
+      
+        <p>budget - £ <%= Helper.to_2dp( budget.amount ) %></p>
+        <p style="<%= "color: red" if budget.spent.to_i > budget.amount %>">spent - £ <%= budget.spent %></p>
+      </div>
+      <div class="bar_div" style="<%= Helper.get_bar_css( budget.spent, budget.amount ) %>"> </div>
+    </div>
+  </a>
+<% end %>

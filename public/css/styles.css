@@ -9,6 +9,25 @@ body {
 
 }
 
+table {
+  width: 30%;
+  background-color: #DFE2F5;
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+th {
+  border: 1px solid black;
+  text-align: left;
+  padding-left: 15px;
+
+}
+
+tr {
+  text-align: center;
+}
+
 p {
   z-index: 1;
   position: relative;
@@ -17,6 +36,7 @@ p {
 nav li {
   display: inline-block;
   margin: 15px;
+  color: #D0CEBA;
 }
 
 nav a {
@@ -28,6 +48,11 @@ nav a {
 
 a {
   text-decoration: none;
+
+}
+
+nav a:visited { 
+    color: #D0CEBA;
 }
 
 .tag_div {
@@ -86,7 +111,7 @@ input[type=submit] {
 }
 
 nav {
-  background-color: rgb(210, 225, 255); 
+  background-color: #3D405B; 
 
 }
 
@@ -102,9 +127,5 @@ ul div {
   background-color: red;
 }
 
-@keyframes grow {0% {height: 0px;}
 
-
-.trans_p {
-  display: inline-block;
-}
+@keyframes grow {0% {height: 0px;}}

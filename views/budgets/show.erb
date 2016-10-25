@@ -1,1 +1,29 @@
-SHOW!
+<h2>budget details</h2>
+
+<table>
+  <tr>
+    <th><h4><%= @budget.name %></h4></th>
+    <td>£ <%= Helper.to_2dp( @budget.amount ) %></td>
+  </tr>
+</table>
+
+<form action="/budgets/<%= @budget.id %>" method="post">
+<input type="hidden" name="_method" value="delete">
+
+  <input class="delete_submit" type="submit" value="delete!">
+  
+</form>
+<form action="/budgets/<%= @budget.id %>/edit" method="get">
+
+  <input type="submit" value="edit">
+  
+</form>
+
+
+
+<h2>transactions in this budget</h2>
+<% @budget.transactions.each do |transaction| %>
+  <p><%= transaction.payee.name %> £ <%= Helper.to_2dp ( transaction.amount ) %></p>
+<% end %>
+<h2>Total spent = £ <%= @budget.spent %></h2>
+
