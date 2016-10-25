@@ -92,7 +92,6 @@ class Tag
     sql = "DELETE FROM tags
             WHERE id = #{id}"
     SqlRunner.run( sql )
-
   end
 
 
