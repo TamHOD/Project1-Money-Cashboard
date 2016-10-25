@@ -1,5 +1,6 @@
 <h1>transactions</h1>
 <% @transactions.each do |transaction| %>
-  <p><%= transaction.payee.name %><a href="/transactions/<%= transaction.id %>"> £ <%= transaction.amount_2f_s %></a></p>
+  <p><%= transaction.payee.name %><a href="/transactions/<%= transaction.id %>"> £ <%= Helper.to_2dp( transaction.amount ) %></a></p>
 <% end %>
 <h2>Total - £ <%= Transaction.total %></h2>
+<h2>Total budget - £ <%= Tag.total_budget %></h2>

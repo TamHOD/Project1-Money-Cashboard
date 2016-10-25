@@ -1,4 +1,4 @@
-<%= @transaction.payee.name %> £<%= @transaction.amount_2f_s %>
+<%= @transaction.payee.name %> £<%= Helper.to_2dp( @transaction.amount ) %>
 
 
 <form action="/transactions/<%= @transaction.id %>" method="post">

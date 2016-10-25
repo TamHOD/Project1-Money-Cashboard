@@ -17,10 +17,10 @@
 
 
 <p><%= @tag.description %></p>
-<p>£ <%= @tag.budget_2f_s %></p>
+<p>£ <%= Helper.to_2dp( @tag.budget ) %></p>
 <h2>transactions with this tag</h2>
 <% @tag.transactions.each do |transaction| %>
-  <p><%= transaction.payee.name %> £ <%= transaction.amount_2f_s %></p>
+  <p><%= transaction.payee.name %> £ <%= Helper.to_2dp ( transaction.amount ) %></p>
 <% end %>
 <h2>Total spent = £ <%= @tag.spent %></h2>
 

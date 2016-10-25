@@ -43,14 +43,9 @@ class Tag
   end
 
   def spent
-    spent = 0
-    transactions.each {|transaction| spent += transaction.amount }
-    return sprintf('%.2f', spent)
+    return Helper.total_to_2dp( transactions, "amount" )
   end  
 
-  def budget_2f_s
-    return sprintf('%.2f', @budget)
-  end
 
   def self.update( params )
     sql = "UPDATE tags SET
@@ -92,6 +87,10 @@ class Tag
     sql = "DELETE FROM tags
             WHERE id = #{id}"
     SqlRunner.run( sql )
+  end
+
+  def self.total_budget
+    return Helper.total_to_2dp( Tag.all, "budget" )
   end
 
 

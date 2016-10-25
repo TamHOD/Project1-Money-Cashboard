@@ -35,6 +35,21 @@ class Helper
     return sprintf('%.2f', number)
   end
 
+  def self.totaller( collection, value_method )
+    total = 0
+    collection.each do |object|
+      total += object.send( value_method )
+    end
+    return total
+  end
+
+  def self.total_to_2dp( collection, value_method )
+    total = Helper.totaller( collection, value_method )
+    return Helper.to_2dp( total )
+  end
+
+
+
   
 
 end

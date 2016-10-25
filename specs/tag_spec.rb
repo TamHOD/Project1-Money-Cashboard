@@ -9,6 +9,7 @@ class TestTag < Minitest::Test
     #name is unique so have to generate randomly
     @rand_name = "food_#{rand(9999999).to_s}"
     @tag = Tag.new('name' => @rand_name, 'color' => 'green', 'description' => 'Total food budget', 'budget' => 200)
+      
   end
 
   def test_name
