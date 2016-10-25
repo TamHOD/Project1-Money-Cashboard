@@ -1,5 +1,7 @@
 <p><%= @payee.name %></p>
 
+<p><a href="<%= @payee.website %>"><%= @payee.website %></a></p>
+
 <form action="/payees/<%= @payee.id %>" method="post">
 <input type="hidden" name="_method" value="delete">
 
@@ -12,14 +14,14 @@
   
 </form>
 
-<p><a href="<%= @payee.website %>"><%= @payee.website %></a></p>
+
 
 
 <h3>Transactions for this payee</h3>
 <% @payee.transactions.each do |transaction| %>
   £ <%= Helper.to_2dp( transaction.amount ) %>
     <% transaction.tags.each do |tag| %>
-      <%= tag.name %>
+      <p style="display: inline-block; background-color: <%= tag.color %>"><%= tag.name %></p>
     <% end %>
     <br>
 <% end %>

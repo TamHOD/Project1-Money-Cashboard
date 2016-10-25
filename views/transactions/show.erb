@@ -9,7 +9,7 @@
 </form>
 
 <% @transaction.tags.each do |tag| %>
-  <%= tag.name %>
+  <p style="display: inline-block; background-color: <%= tag.color %>"><%= tag.name %></p>
 <% end %>
 
 <form action="/transactions/<%= @transaction.id %>/edit" method="get">

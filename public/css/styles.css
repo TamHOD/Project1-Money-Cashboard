@@ -105,4 +105,6 @@ ul div {
 @keyframes grow {0% {height: 0px;}
 
 
-
+.trans_p {
+  display: inline-block;
+}
