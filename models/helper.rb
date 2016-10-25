@@ -20,12 +20,15 @@ class Helper
       return 2
     when "/transactions"
       return 3
+    when "/budets"
+      return 4  
     when "/tags/new"
-      return 4
-    when "/payees/new"
       return 5
-    when "/transactions/new"
+    when "/payees/new"
       return 6
+    when "/transactions/new"
+      return 7
+    when "/budgets/new"
     end
 
   end

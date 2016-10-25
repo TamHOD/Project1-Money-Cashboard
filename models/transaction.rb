@@ -3,23 +3,26 @@ require_relative './payee'
 
 class Transaction
 
-  attr_reader :id, :payee_id, :amount
+  attr_reader :id, :payee_id, :amount, :budget_id
 
   def initialize( params )
     @id = params['id'].to_i if params['id']
     @amount = params['amount'].to_f
     @payee_id = params['payee_id'].to_i
+    @budget_id = params['budget_id'].to_i
 
   end
 
   def save
     sql = "INSERT into transactions(
         payee_id,
-        amount
+        amount,
+        budget_id
       )
       VALUES(
         #{@payee_id},
-        #{@amount}
+        #{@amount},
+        #{@budget_id}
       )
       RETURNING *
       "

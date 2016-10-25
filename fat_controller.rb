@@ -16,6 +16,9 @@ require_relative './controllers/transactions_controller'
 require_relative './models/tagging'
 require_relative './controllers/taggings_controller'
 
+require_relative './models/budget'
+require_relative './controllers/budgets_controller'
+
 require_relative './models/helper'
 
 before do
