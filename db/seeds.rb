@@ -8,7 +8,7 @@ require_relative '../models/helper'
 require 'pry-byebug'
 
 
-
+Budget.delete_all
 Tag.delete_all
 Payee.delete_all
 Transaction.delete_all

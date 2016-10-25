@@ -9,6 +9,13 @@
         <option value="<%= payee.id %>" <%="selected" if @transaction.payee.id == payee.id %>><%= payee.name %></option>
       <% end %>
     </select>
+
+  <label for="budget">budget</label>
+    <select name="budget_id" id="budget">
+      <% @budgets.each do |budget| %>
+        <option value="<%= budget.id %>" <%="selected" if @transaction.budget.id == budget.id %>><%= budget.name %></option>
+      <% end %>
+    </select>  
     
   <label for="amount">amount</label>
     <input type="number" name="amount" id="amount" value="<%= @transaction.amount %>">

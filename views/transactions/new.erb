@@ -8,7 +8,14 @@
         <option value="<%= payee.id %>"><%= payee.name %></option>
       <% end %>
     </select>
-    
+   
+  <label for="budget_id">budget</label>  
+  <select name="budget_id" id="budget_id"">
+    <% @budgets.each do |budget| %>
+      <option value="<%= budget.id %>"><%= budget.name %></option>
+    <% end %>
+  </select>
+
   <label for="amount">amount</label>
     <input type="number" name="amount" id="amount">
 

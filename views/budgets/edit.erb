@@ -1,1 +1,14 @@
-EDIT!
+<h1>edit budget</h1>
+<form action="/budgets/<%= @budget.id %>" method="post">
+<input type="hidden" name="_method" value="put">
+
+  <label for="name">name</label>
+    <input type="text" name="name" id="name" value="<%= @budget.name %>">
+
+  <label for="amount">amount</label>
+    <input type="number" name="amount" id="amount" value="<%= @budget.amount %>">
+
+
+  <input type="submit" value="update">
+
+</form>

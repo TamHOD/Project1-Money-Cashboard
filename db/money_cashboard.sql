@@ -26,7 +26,7 @@ CREATE TABLE budgets(
 
 CREATE TABLE transactions(
   id SERIAL4 PRIMARY KEY,
-  payee_id INT4 REFERENCES payees(id),
+  payee_id INT4 REFERENCES payees(id) ON DELETE SET NULL,
   amount NUMERIC(10,2),
   budget_id INT4 REFERENCES budgets(id) ON DELETE SET NULL
 );

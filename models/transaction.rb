@@ -41,6 +41,14 @@ class Transaction
     return Tag.map_items( sql )
   end
 
+  def budget
+    sql = "SELECT budgets.* FROM budgets
+            INNER JOIN transactions 
+              ON transactions.budget_id = budgets.id
+                WHERE budgets.id = #{@budget_id}"
+    return Budget.map_item( sql )
+  end
+
 
   def amount_2f_s
     return sprintf('%.2f', @amount)
@@ -58,7 +66,8 @@ class Transaction
   def self.update( params )
     sql = "UPDATE transactions SET
       amount = #{params['amount']},
-      payee_id = #{params['payee_id']}
+      payee_id = #{params['payee_id']},
+      budget_id = #{params['budget_id']}
     WHERE 
       id = #{params['id']}"
     SqlRunner.run( sql )

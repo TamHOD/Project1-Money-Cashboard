@@ -10,6 +10,7 @@ end
 get '/transactions/new' do 
   @payees = Payee.all
   @tags = Tag.all
+  @budgets = Budget.all
   erb(:'/transactions/new')
 end
 
@@ -33,6 +34,7 @@ get '/transactions/:id/edit' do
   @transaction = Transaction.find( params[:id] )
   @payees = Payee.all
   @tags = Tag.all
+  @budgets = Budget.all
   erb(:'/transactions/edit')
 
 end
