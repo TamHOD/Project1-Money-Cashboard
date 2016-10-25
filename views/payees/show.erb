@@ -13,3 +13,16 @@
 </form>
 
 <p><a href="<%= @payee.website %>"><%= @payee.website %></a></p>
+
+
+<h3>Transactions for this payee</h3>
+<% @payee.transactions.each do |transaction| %>
+  £ <%= Helper.to_2dp( transaction.amount ) %>
+    <% transaction.tags.each do |tag| %>
+      <%= tag.name %>
+    <% end %>
+    <br>
+<% end %>
+
+<h3>Total for this payee</h3>
+<h2>£ <%= @payee.total  %>

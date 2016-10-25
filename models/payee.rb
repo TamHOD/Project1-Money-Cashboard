@@ -25,6 +25,20 @@ class Payee
     @id = payee.id.to_i
   end
 
+  def transactions
+    sql = "SELECT transactions.* from transactions
+            INNER JOIN payees 
+              ON transactions.payee_id = payees.id
+                WHERE payee_id = #{id}"
+    return Transaction.map_items( sql )
+  end
+
+  def total
+    return Helper.total_to_2dp( transactions, "amount" )
+  end
+
+
+
   def self.update( params )
     sql = "UPDATE payees SET
       name = '#{params['name']}',
