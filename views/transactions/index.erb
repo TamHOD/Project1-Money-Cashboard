@@ -1,5 +1,22 @@
-<h1>transactions</h1>
-<% @transactions.each do |transaction| %>
-  <p><%= transaction.payee.name %><a href="/transactions/<%= transaction.id %>"> £ <%= Helper.to_2dp( transaction.amount ) %></a></p>
-<% end %>
+<table class="table_index">
+    <% @transactions.each do |transaction| %>
+
+    <tr>
+
+    <td><a href="/transactions/<%= transaction.id %>"><%= transaction.payee.name %></a></td>
+
+    <td><a href="/transactions/<%= transaction.id %>">£ <%= Helper.to_2dp( transaction.amount ) %></a></td>
+
+    <% transaction.tags.each do |tag| %>
+     <td style="display: inline-block; background-color: <%= tag.color %>"><a href="/tags/<%= tag.id %>"><%= tag.name %></a></td>
+    <% end %>
+
+  </tr>
+  
+  <% end %>
+  
+</table>
+
 <h2>Total - £ <%= Transaction.total %></h2>
+
+

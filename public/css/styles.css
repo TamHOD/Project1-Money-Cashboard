@@ -4,7 +4,7 @@
 }
 
 body {
-    font-weight: lighter;
+   /* font-weight: lighter;*/
     background-color: rgb(223, 234, 244);
 
 }
@@ -13,8 +13,38 @@ table {
   width: 30%;
   background-color: #DFE2F5;
   border: 1px solid black;
-  border-collapse: collapse;
   padding: 5px;
+
+}
+
+.table_index {
+  font-size: 120%;
+  width: 40%;
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 5px;
+  
+}
+
+.favicon{
+  width: 30px;
+  height: 30px;
+}
+
+.table_index th {
+  
+  padding-left: 15px;
+
+}
+
+.table_index td { 
+  padding: 5px;
+  text-align: left;
+}
+
+.table_index tr { 
+  text-align: left;
+  border: 1px solid black;
 }
 
 th {
@@ -46,12 +76,15 @@ nav a {
 
 }
 
+a, a:visited{
+     color: blue;
+}
 a {
   text-decoration: none;
 
 }
 
-nav a:visited { 
+nav a:visited, nav a { 
     color: #D0CEBA;
 }
 
@@ -73,12 +106,10 @@ nav a:visited {
   animation-duration: 1.5s;
   animation-iteration-count: 1;
   position: absolute;
-
   bottom: 0;
   right: 0;
   text-align: center;
  
-
 }
 
 .percent_text {

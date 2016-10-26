@@ -1,6 +1,9 @@
-<h1>payees</h1>
 <% @payees.each do |payee| %>
-  <a href="/payees/<%= payee.id %>"><%= payee.name %></a><br><br>
+  <a href="/payees/<%= payee.id %>">
+  <object class="favicon" data="<%= Helper.get_favicon( payee.website ) %>">
+      <img class="favicon" src="favicon.ico" />
+  </object>
+  <%= payee.name %></a><br><br>
 <% end %>
 
 

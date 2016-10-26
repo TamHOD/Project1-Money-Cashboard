@@ -64,10 +64,14 @@ class Helper
     css = "height: #{bar_height}px;"
     css_add = "background-color: orange;" if percentage >= 0.66
     css_add = "background-color: #E55471;" if percentage >= 0.80
-    css_add += "padding-bottom: 15px;" if bar_height < 10
+    css_add += "padding-bottom: 15px;" if bar_height <= 10
 
     return css + css_add
     
+  end
+
+  def self.get_favicon( website )
+    return website.to_s + "/favicon.ico"
   end
 
    

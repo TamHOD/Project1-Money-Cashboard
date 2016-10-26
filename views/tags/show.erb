@@ -1,6 +1,8 @@
 <h2>tag details</h2>
 
-<h4 style="background-color: <%= @tag.color %>; width: 20%"><%= @tag.name %></h4>
+<div class ="tag_div" style="background-color: <%= @tag.color %>;">
+    <%= @tag.name %>
+</div>
 
 <form action="/tags/<%= @tag.id %>" method="post">
 <input type="hidden" name="_method" value="delete">
