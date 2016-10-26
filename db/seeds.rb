@@ -47,10 +47,18 @@ Transaction.delete_all
 @budget4.save
 
 
-@transaction = Transaction.new('payee_id' => @payee1.id, 'amount' => 100, 'budget_id' => @budget1.id)
-@transaction.save
+@transaction1 = Transaction.new('payee_id' => @payee1.id, 'amount' => 100, 'budget_id' => @budget1.id)
+@transaction1.save
 
-@tagging = Tagging.new('tag_id' => @tag1.id, 'transaction_id' => @transaction.id)
+@transaction2 = Transaction.new('payee_id' => @payee2.id, 'amount' => 20, 'budget_id' => @budget1.id)
+@transaction2.save
+
+@transaction3 = Transaction.new('payee_id' => @payee4.id, 'amount' => 50, 'budget_id' => @budget1.id)
+@transaction3.save
+
+
+
+@tagging = Tagging.new('tag_id' => @tag1.id, 'transaction_id' => @transaction1.id)
 @tagging.save
 
 

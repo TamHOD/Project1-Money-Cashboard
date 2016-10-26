@@ -1,6 +1,6 @@
 <h2>tag details</h2>
 
-<div class ="tag_div" style="background-color: <%= @tag.color %>;">
+<div class ="tag_div_show" style="background-color: <%= @tag.color %>;">
     <%= @tag.name %>
 </div>
 
@@ -20,8 +20,20 @@
 
 
 <h2>transactions with this tag</h2>
+<table class="table_index">
 <% @tag.transactions.each do |transaction| %>
-  <p><%= transaction.payee.name %> £ <%= Helper.to_2dp ( transaction.amount ) %></p>
+  <tr>
+    <td>
+      <a href="/payees/<%= transaction.payee.id %>">
+      <object class="favicon" data="<%= Helper.get_favicon( transaction.payee.website ) %>">
+          <img class="favicon" src="/favicon.ico" />
+      </object>
+      </a>
+    </td>
+    <td><a href="/payees/<%= transaction.payee.id %>"><%= transaction.payee.name %></a></td>
+    <td><a href="/transactions/<%= transaction.id %>">£ <%= Helper.to_2dp( transaction.amount ) %></a></td>
+    </tr>
 <% end %>
+</table>
 <h2>Total spent = £ <%= @tag.spent %></h2>
 

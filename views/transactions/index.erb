@@ -1,12 +1,15 @@
 <table class="table_index">
     <% @transactions.each do |transaction| %>
-
     <tr>
-
-    <td><a href="/transactions/<%= transaction.id %>"><%= transaction.payee.name %></a></td>
-
-    <td><a href="/transactions/<%= transaction.id %>">£ <%= Helper.to_2dp( transaction.amount ) %></a></td>
-
+      <td>
+        <a href="/payees/<%= transaction.payee.id %>">
+        <object class="favicon" data="<%= Helper.get_favicon( transaction.payee.website ) %>">
+            <img class="favicon" src="/favicon.ico" />
+        </object>
+        </a>
+      <td>
+      <td><a href="/payees/<%= transaction.payee.id %>"><%= transaction.payee.name %></a></td>
+      <td><a href="/transactions/<%= transaction.id %>">£ <%= Helper.to_2dp( transaction.amount ) %></a></td>
     <% transaction.tags.each do |tag| %>
      <td style="display: inline-block; background-color: <%= tag.color %>"><a href="/tags/<%= tag.id %>"><%= tag.name %></a></td>
     <% end %>

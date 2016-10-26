@@ -1,8 +1,7 @@
-<h2>budget details</h2>
+<h2><%= @budget.name %> </h2>
 
-<table>
+<table class="table_index">
   <tr>
-    <th><h4><%= @budget.name %></h4></th>
     <td>£ <%= Helper.to_2dp( @budget.amount ) %></td>
   </tr>
 </table>
@@ -22,8 +21,26 @@
 
 
 <h2>transactions in this budget</h2>
-<% @budget.transactions.each do |transaction| %>
-  <p><%= transaction.payee.name %> £ <%= Helper.to_2dp ( transaction.amount ) %></p>
-<% end %>
+<table class="table_index">
+    <% @budget.transactions.each do |transaction| %>
+    <tr>
+      <td>
+        <a href="/payees/<%= transaction.payee.id %>">
+        <object class="favicon" data="<%= Helper.get_favicon( transaction.payee.website ) %>">
+            <img class="favicon" src="/favicon.ico" />
+        </object>
+        </a>
+      <td>
+      <td><a href="/payees/<%= transaction.payee.id %>"><%= transaction.payee.name %></a></td>
+      <td><a href="/transactions/<%= transaction.id %>">£ <%= Helper.to_2dp( transaction.amount ) %></a></td>
+    <% transaction.tags.each do |tag| %>
+     <td style="display: inline-block; background-color: <%= tag.color %>"><a href="/tags/<%= tag.id %>"><%= tag.name %></a></td>
+    <% end %>
+
+  </tr>
+  
+  <% end %>
+  
+</table>
 <h2>Total spent = £ <%= @budget.spent %></h2>
 

@@ -32,7 +32,8 @@ end
 
 #update
 put '/payees/:id' do
-  Payee.update( params[:id] )
+ 
+  Payee.update( params )
   redirect to(:'/payees')
 end
 

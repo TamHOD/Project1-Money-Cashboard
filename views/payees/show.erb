@@ -22,13 +22,22 @@
 
 
 <h3>Transactions for this payee</h3>
-<% @payee.transactions.each do |transaction| %>
-  £ <%= Helper.to_2dp( transaction.amount ) %>
+
+<table class="table_index">
+    <% @payee.transactions.each do |transaction| %>
+    <tr>
+      <td><a href="/transactions/<%= transaction.id %>">£ <%= Helper.to_2dp( transaction.amount ) %></a></td>
     <% transaction.tags.each do |tag| %>
-      <p style="display: inline-block; background-color: <%= tag.color %>"><%= tag.name %></p>
+     <td style="display: inline-block; background-color: <%= tag.color %>"><a href="/tags/<%= tag.id %>"><%= tag.name %></a></td>
     <% end %>
-    <br>
-<% end %>
+
+  </tr>
+  
+  <% end %>
+  
+</table>
 
 <h3>Total for this payee</h3>
-<h2>£ <%= @payee.total  %>
+<h2>£ <%= @payee.total  %></h2>
+
+
