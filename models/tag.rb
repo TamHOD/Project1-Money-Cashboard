@@ -2,29 +2,24 @@ require_relative '../db/sql_runner'
 
 class Tag
 
-  attr_reader :id, :name, :color, :description, :budget
+  attr_reader :id, :name, :color
 
   def initialize( params )
     @id = params['id'].to_i if params['id']
     @name = params['name']
     @color = params['color']
-    @description = params['description']
-    @budget = params['budget'].to_f
+    
    
   end
 
   def save
     sql = "INSERT into tags(
         name,
-        color,
-        description,
-        budget
+        color
       )
       VALUES(
         '#{@name}',
-        '#{@color}',
-        '#{@description}',
-         #{@budget}
+        '#{@color}'
       )
       RETURNING *
       "
@@ -50,9 +45,7 @@ class Tag
   def self.update( params )
     sql = "UPDATE tags SET
       name = '#{params['name']}',
-      description = '#{params['description']}',
-      color = '#{params['color']}',
-      budget = #{params['budget']}
+      color = '#{params['color']}'
     WHERE 
       id = #{params['id']}"
     SqlRunner.run( sql )
@@ -89,9 +82,9 @@ class Tag
     SqlRunner.run( sql )
   end
 
-  def self.total_budget
-    return Helper.total_to_2dp( Tag.all, "budget" )
-  end
+  # def self.total_budget
+  #   return Helper.total_to_2dp( Tag.all, "budget" )
+  # end
 
 
 

@@ -7,9 +7,7 @@ DROP TABLE IF EXISTS budgets;
 CREATE TABLE tags(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255) UNIQUE,
-  color VARCHAR(255),
-  description VARCHAR(255),
-  budget NUMERIC(10,2)
+  color VARCHAR(255)
 );
 
 CREATE TABLE payees(

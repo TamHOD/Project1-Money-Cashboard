@@ -24,13 +24,6 @@ class TestTag < Minitest::Test
     assert_equal('Total food budget', @tag.description)
   end
 
-  def test_budget
-    assert_equal(200, @tag.budget)
-  end
-
-  def test_budget_float
-    assert_equal(Float, @tag.budget.class)
-  end
 
   def test_save
     @tag.save

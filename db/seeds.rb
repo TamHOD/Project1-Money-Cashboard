@@ -13,7 +13,7 @@ Tag.delete_all
 Payee.delete_all
 Transaction.delete_all
 
-@tag = Tag.new('name' => 'food', 'color' => 'lightblue', 'description' => 'Total food budget', 'budget' => 200)
+@tag = Tag.new('name' => 'food', 'color' => 'lightblue')
 @tag.save
 
 @payee = Payee.new('name' => 'Tesco', 'website' => "www.tesco.com")

@@ -55,16 +55,7 @@ nav a:visited {
     color: #D0CEBA;
 }
 
-.tag_div {
-  /*width: 300px;*/
-  width: 25%;
-  display: inline-block;
-  height: 200px;
-  /*z-index: -1;*/
-  position: relative;
-  margin: 5px;
 
-}
 
 .p_div {
   display: inline-block;
@@ -74,7 +65,7 @@ nav a:visited {
 .bar_div {
   float: right;
   width: 24%;
-  height: 180px;
+  height: 200px;
   display: inline-block;
   background-color: lightgreen;
   z-index: 0;
@@ -82,15 +73,41 @@ nav a:visited {
   animation-duration: 1.5s;
   animation-iteration-count: 1;
   position: absolute;
+
   bottom: 0;
   right: 0;
+  text-align: center;
+ 
+
+}
+
+.percent_text {
+  font-size: 80%; 
+}
+
+.tag_div {
+  width: 15%;
+  display: inline-block;
+  height: 50px;
+  /*position: relative;*/
+  margin: 5px;
+  line-height: 50px;
+  text-align: center
 
 }
 
 .tag_div:hover {
   opacity: 0.50;
   border-style: 1px solid black;
+}
 
+.budget_div {
+  width: 25%;
+  display: inline-block;
+  height: 200px;
+  position: relative;
+  margin: 5px;
+  background-color: lightblue;
 }
 
 label {
@@ -129,3 +146,4 @@ ul div {
 
 
 @keyframes grow {0% {height: 0px;}}
+

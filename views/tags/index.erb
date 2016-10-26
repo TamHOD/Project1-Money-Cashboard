@@ -3,13 +3,11 @@
   <a class ="tag_a" href="/tags/<%= tag.id %>">
     <div class ="tag_div" style="background-color: <%= tag.color %>;">
     
-      <div class="p_div">
-        <p><%= tag.name %></p>
-        <p><%= tag.description %></p>
-        <p>budget - £ <%= Helper.to_2dp( tag.budget ) %></p>
-        <p style="<%= "color: red" if tag.spent.to_i > tag.budget %>">spent - £ <%= tag.spent %></p>
-      </div>
-      <div class="bar_div" style="<%= Helper.get_bar_css( tag.spent, tag.budget ) %>"> </div>
+      
+        <%= tag.name %>
+  
+    
+     
     </div>
   </a>
 <% end %>

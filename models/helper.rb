@@ -51,15 +51,20 @@ class Helper
     return Helper.to_2dp( total )
   end
 
+  def self.percent( part, total )
+    return part.to_f / total.to_f
+  end
+
   def self.get_bar_css( part, total )
 
-    percentage = (part.to_f) / (total.to_f)
+    percentage = Helper.percent( part, total)
     bar_height =  200 * percentage
     bar_height = 200 if bar_height > 200
     css_add = ""
     css = "height: #{bar_height}px;"
     css_add = "background-color: orange;" if percentage >= 0.66
-    css_add = "background-color: red;" if percentage >= 0.80
+    css_add = "background-color: #E55471;" if percentage >= 0.80
+    css_add += "padding-bottom: 15px;" if bar_height < 10
 
     return css + css_add
     
