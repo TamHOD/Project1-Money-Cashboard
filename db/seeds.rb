@@ -36,10 +36,17 @@ Transaction.delete_all
 @payee4.save
 @payee5 = Payee.new('name' => 'Amazon', 'website' => "www.amazon.co.uk")
 @payee5.save
+@payee6 = Payee.new('name' => 'landlord', 'website' => "")
+@payee6.save
+@payee7 = Payee.new('name' => 'Footlights', 'website' => "")
+@payee7.save
 
-@budget1 = Budget.new('name' => 'essentials', 'amount' => 1000)
+
+
+
+@budget1 = Budget.new('name' => 'essentials', 'amount' => 800)
 @budget1.save
-@budget2 = Budget.new('name' => 'fun', 'amount' => 200)
+@budget2 = Budget.new('name' => 'fun', 'amount' => 30)
 @budget2.save
 @budget3 = Budget.new('name' => 'holiday', 'amount' => 500)
 @budget3.save
@@ -55,6 +62,14 @@ Transaction.delete_all
 
 @transaction3 = Transaction.new('payee_id' => @payee4.id, 'amount' => 50, 'budget_id' => @budget1.id)
 @transaction3.save
+
+@transaction4 = Transaction.new('payee_id' => @payee6.id, 'amount' => 600, 'budget_id' => @budget1.id)
+@transaction4.save
+
+
+
+@transaction6 = Transaction.new('payee_id' => @payee7.id, 'amount' => 20, 'budget_id' => @budget2.id)
+@transaction6.save
 
 
 
