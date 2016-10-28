@@ -27,5 +27,6 @@ before do
 end
 
 get '/' do
+  puts "TESTING"
   redirect to('/tags')
 end
