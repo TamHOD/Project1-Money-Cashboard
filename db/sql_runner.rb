@@ -5,6 +5,7 @@ class SqlRunner
 
     begin
       db = PG.connect( dbname: 'd8q2cn0mhs8jll', host: 'ec2-54-228-214-47.eu-west-1.compute.amazonaws.com')
+      puts db.methods
       result = db.exec ( sql )
 
     ensure
