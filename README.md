@@ -11,4 +11,4 @@ It's a simple budgeting app demonstrating use of these technologies and principl
 - PostgreSQL
 - TDD
 
-After the project I was keen to be able to demonstrate it without the need for someone to go through a lengthy install / setup. So I researched heroku, and so you can see the app running [here](https://glacial-scrubland-75610.herokuapp.com/transactions) -
+After the project I was keen to be able to demonstrate it without the need for someone to go through a lengthy install / setup process. So I deployed it to heroku, and you can use the app [here](https://glacial-scrubland-75610.herokuapp.com/transactions) -
