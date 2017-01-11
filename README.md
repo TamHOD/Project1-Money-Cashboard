@@ -1,6 +1,6 @@
 # Project1-Money-Cashboard
 
-Available on Heroku [here](https://glacial-scrubland-75610.herokuapp.com/) (initial load may be slow as Herouku boots) - 
+Available on Heroku [here](https://glacial-scrubland-75610.herokuapp.com/) (initial load may be slow as Herouku starts the app) - 
 
 This is the first project I undertook during week 5 of the 16 week [CodeClan](http://www.codeclan.com) immersive programming course.
 
