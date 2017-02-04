@@ -2,6 +2,7 @@
 
 #index
 get '/budgets' do
+  @error = flash[:error]
   @budgets = Budget.all
   erb(:'/budgets/index')
 end
@@ -39,7 +40,11 @@ end
 
 #delete
 delete '/budgets/:id' do
-  Budget.delete( params[:id ])
+  if (Budget.all.size == 1)
+    flash[:error] = "You must have at least one budget..."
+  else
+    Budget.delete( params[:id ])
+  end
   redirect to( "/budgets" )
 
 end
