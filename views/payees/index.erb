@@ -1,3 +1,4 @@
+<h3><%= @error %></h3>
 <% @payees.each do |payee| %>
   <a href="/payees/<%= payee.id %>">
   <object class="favicon" data="<%= Helper.get_favicon( payee.website ) %>">

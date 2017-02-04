@@ -2,6 +2,8 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require('pry-byebug')
 
+
+
 require_relative './db/sql_runner'
 
 require_relative './models/tag'
@@ -20,6 +22,9 @@ require_relative './models/budget'
 require_relative './controllers/budgets_controller'
 
 require_relative './models/helper'
+
+require 'sinatra/flash'
+enable :sessions
 
 before do
   @path = request.path_info
